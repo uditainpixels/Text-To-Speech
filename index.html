@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Speech API</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Text To Speech</h1>
+    </header>
+
+    <img src="image.png" class="cursor" alt="cursor">
+
+    <div class="container">
+      <div class="card instructions">
+        <h3>How to Use</h3>
+        <ol>
+          <li>Type or paste your text below</li>
+          <li>Select a voice from the dropdown</li>
+          <li>Adjust speed and pitch</li>
+          <li>Click "Speak"</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <label for="text-input">
+          <strong>Your Text:</strong>
+          <span class="char-counter">
+            <span id="char-count">0</span>
+          </span>
+        </label>
+        <textarea
+          id="text-input"
+          placeholder="Enter text to be spoken"
+          rows="8"
+        ></textarea>
+      </div>
+
+      <div class="card">
+        <label for="voice-select"><strong>Select Voice:</strong></label>
+        <select id="voice-select">
+          <option value="">Loading voices...</option>
+        </select>
+      </div>
+
+      <div class="card controls-grid">
+        <div class="control-group">
+          <label for="speed-slider">
+            Speed: <span id="speed-value">1x</span>
+          </label>
+          <input
+            type="range"
+            id="speed-slider"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+        </div>
+
+        <div class="control-group">
+          <label for="pitch-slider">
+            Pitch: <span id="pitch-value">1x</span>
+          </label>
+          <input
+            type="range"
+            id="pitch-slider"
+            min="0"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button id="speak-btn">Speak</button>
+        <button id="stop-btn">Stop</button>
+      </div>
+
+      <div id="status" class="status">
+        <span class="status-dot"></span>
+        <span id="status-text">Ready</span>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>
+        Built by Udita Sharma |
+        <a href="https://github.com/uditainpixels">GitHub</a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
